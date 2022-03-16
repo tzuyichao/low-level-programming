@@ -1,3 +1,4 @@
+// Example from Dr. Shiuh-Sheng Yu Web site
 #include <stdio.h>
 #include <stdlib.h>
 
