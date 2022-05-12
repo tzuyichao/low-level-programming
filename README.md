@@ -1,2 +1,5 @@
-# review_c
-review c starting 2021
+# review C, C++ and assembly 
+
+starting 2021
+
+還有放練習Ghidra的小程式
