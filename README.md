@@ -1,3 +1,3 @@
-# review C, C++ and assembly 
+# Low Level Programming
 
-還有放練習Ghidra的小程式
+放一些學low level programming、解leetcode題目，還有練習Ghidra的程式碼
