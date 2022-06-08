@@ -1,37 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void move(int* nums, int numsSize, int idx) 
-{
-    int tmp = nums[idx];
-    int i;
-    for(i=idx; i<numsSize-1; i++) {
-        nums[i] = nums[i+1];
-    }
-    nums[i] = tmp;
-}
-
 int removeDuplicates(int* nums, int numsSize)
 {
-    int cur = nums[0];
+    int sidx = 0;
+    int fidx = 1;
+    int cur = nums[sidx];
     int d = 0;
-    for(int i=1; i<numsSize; i++) {
-        if(nums[i] == cur) {
-            nums[i] = 101;
+    while(fidx < numsSize) {
+        if(cur == nums[fidx]) {
             ++d;
         } else {
-            cur = nums[i];
+            nums[++sidx] = nums[fidx];
+            cur =nums[fidx];
         }
-    }
-    int m = 0;
-    int idx = 0;
-    while(m != d) {
-        if(nums[idx] == 101) {
-            move(nums, numsSize, idx);
-            ++m;
-        } else {
-            ++idx;
-        }
+        ++fidx;
     }
     return numsSize-d;
 }
