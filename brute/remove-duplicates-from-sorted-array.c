@@ -1,6 +1,14 @@
-int cmpFunc(const void* a, const void* b)
+#include <stdio.h>
+#include <stdlib.h>
+
+void move(int* nums, int numsSize, int idx) 
 {
-    return (*(int*)a - *(int*)b);
+    int tmp = nums[idx];
+    int i;
+    for(i=idx; i<numsSize-1; i++) {
+        nums[i] = nums[i+1];
+    }
+    nums[i] = tmp;
 }
 
 int removeDuplicates(int* nums, int numsSize)
@@ -15,6 +23,25 @@ int removeDuplicates(int* nums, int numsSize)
             cur = nums[i];
         }
     }
-    qsort(nums, numsSize, sizeof(int), cmpFunc);
+    int m = 0;
+    int idx = 0;
+    while(m != d) {
+        if(nums[idx] == 101) {
+            move(nums, numsSize, idx);
+            ++m;
+        } else {
+            ++idx;
+        }
+    }
     return numsSize-d;
+}
+
+int main()
+{
+    int nums[] = {1, 1, 1, 2};
+    int r = removeDuplicates(nums, 4);
+    for(int i=0; i<r; i++) {
+        printf("%d ", nums[i]);
+    }
+    printf("\n");
 }
