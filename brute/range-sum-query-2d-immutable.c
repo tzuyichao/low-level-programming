@@ -39,6 +39,7 @@ int numMatrixSumRegion(NumMatrix* obj, int row1, int col1, int row2, int col2)
     if(row1 == row2 && col1 == col2) {
         return obj->dp[row1][col1];
     }
+    
     return obj->dp[row2][col2] - obj->dp[row2][col1-1] - obj->dp[row1-1][col2] + obj->dp[row1-1][col1-1];
 }
 
