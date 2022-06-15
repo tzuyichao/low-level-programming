@@ -1,5 +1,10 @@
 // 1048. Longest String Chain
 // https://leetcode.com/problems/longest-string-chain/
+// 對題目的了解就是連續字距是一的最大長度
+// 作法
+// 1. 就是先按照字串長度排序好
+// 2. 然後DP就是字串陣列的長度的array，初始為1
+// 3. 從第二個開始，往前找最長字距是1，走的過程把最大值留下來回答用
 int compFunc(const void *a, const void *b) {
     return strlen(*(char**)a) - strlen(*(char**)b);
 }
