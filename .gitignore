@@ -5,3 +5,5 @@
 *.o
 *.i
 *.s
+linux-system/is-it-a-prime
+linux-system/libprime.so
