@@ -1,18 +1,16 @@
 // 189. Rotate Array
 // https://leetcode.com/problems/rotate-array/
-// Time Limit Exceeded
-void rrotate(int* nums, int numsSize)
-{
-    int tmp = nums[numsSize-1];
-    for(int i=numsSize-1; i>0; i--)
-    {
-        nums[i] = nums[i-1];
-    }
-    nums[0] = tmp;
-}
+// v1: Time Limit Exceeded
+// v2: pass
 
 void rotate(int* nums, int numsSize, int k)
 {
-    for(int i=0; i<k; i++)
-        rrotate(nums, numsSize);
+    if(k % numsSize == 0) return;
+    
+    int step = k % numsSize;
+    int temp[numsSize];
+    for(int i=0; i<numsSize; i++)
+        temp[(i+step)%numsSize] = nums[i];
+    for(int i=0; i<numsSize; i++)
+        nums[i] = temp[i];
 }
