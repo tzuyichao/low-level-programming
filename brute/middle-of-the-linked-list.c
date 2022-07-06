@@ -8,31 +8,18 @@
  * };
  */
 
-int length(struct ListNode* head)
-{
-    int res = 0;
-    struct ListNode* c = head;
-    while(c != NULL)
-    {
-        res++;
-        c = c->next;
-    }
-    return res;
-}
+#define MAX 100
 
 struct ListNode* middleNode(struct ListNode* head){
-    int len = length(head);
-    // printf("len: %d\n", len);
+    struct ListNode* db[MAX];
+    
     struct ListNode* c = head;
     int count = 0;
     while(c != NULL) 
     {
-        if(count == len/2)
-        {
-            return c;
-        }
+        db[count] = c;
         count++;
         c = c->next;
     }
-    return head;
+    return db[count/2];
 }
