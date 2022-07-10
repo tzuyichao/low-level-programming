@@ -1,5 +1,7 @@
 // 567. Permutation in String
 // https://leetcode.com/problems/permutation-in-string/
+#include <stdbool.h>
+
 bool compare(int* v1, int* v2, int size)
 {
     for(int i=0; i<size; i++)
