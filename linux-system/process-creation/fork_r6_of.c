@@ -86,10 +86,10 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Usage: %s {test-file-name}\n", argv[0]);
 		exit(EXIT_FAILURE);
 	}
-	unlink(argv[0]);
+	unlink(argv[1]);
 
 #define FILEMODE S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH
-	fd = open(argv[0], O_CREAT | O_TRUNC | O_RDWR, FILEMODE);
+	fd = open(argv[1], O_CREAT | O_TRUNC | O_RDWR, FILEMODE);
 	if(fd == -1)
 		FATAL("open (%s) failed\n", argv[1]);
 	do_work(fd);
