@@ -23,6 +23,7 @@ int main(int argc, char **argv)
 			printf("Child (%d) done, exiting...\n", getpid());
 			exit(EXIT_SUCCESS);
 		default:
+// After the fork, the order of execution between the parent and child process is indeterminate.
 #if 1
 			sleep(2);
 #endif
